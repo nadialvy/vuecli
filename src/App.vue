@@ -13,8 +13,12 @@
               <router-link class="nav-link" to="/">Home</router-link>
             </li>
 
+             <li class="nav-item">
+              <router-link class="nav-link" to="/member">Member</router-link>
+            </li>
+
             <li class="nav-item">
-              <router-link class="nav-link" to="/profile">Profile</router-link>
+              <router-link class="nav-link" to="/about_us">About Us</router-link>
             </li>
 
             <li class="nav-item dropdown">
