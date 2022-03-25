@@ -1,5 +1,6 @@
 <template>
     <div class="container">
+        <router-view></router-view>
         <h3 class="mt-3">Add Member</h3>
         <form>
             <div class="mb-3">
@@ -20,7 +21,7 @@
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
-                <input type="text" class="form-control" id="password" v-model="password">
+                <input type="password" class="form-control" id="password" v-model="password">
             </div>
             <button @click="add()" type="submit" class="btn btn-primary">Add</button>
         </form>
@@ -49,11 +50,12 @@
                     password: this.password
                 }
 
-                // console.log(data)
-
                 this.axios.post("http://localhost/toko-laravel-versi-9/public/api/customers", data)
                 .then(resp => {
+                    this.$swal('Sukses', 'Berhasil tambah data', 'OK')
                     console.log(resp)
+                    this.get();
+                    // this.$route.params('/member')
                 })
             }
         }

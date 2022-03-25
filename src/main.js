@@ -7,6 +7,7 @@ import Home from './components/Home.vue';
 import Profile from './components/Profile.vue';
 import Member from './components/Member.vue';
 import AddMember from './components/AddMember.vue';
+import EditMember from './components/EditMember.vue';
 
 
 const router = createRouter({
@@ -15,7 +16,8 @@ const router = createRouter({
         {path: '/', name: 'Home', component: Home},
         {path: '/about_us', name: 'Profile', component: Profile},
         {path: '/member', name: 'Member', component: Member},
-        {path: '/addMember', name: 'Add Member', component: AddMember}
+        {path: '/addMember', name: 'Add Member', component: AddMember},
+        {path: '/editMember/:id', name: 'Edit Member', component: EditMember}
     ],
     base: '/'
 })
