@@ -23,7 +23,7 @@
                 <label for="password" class="form-label">Password</label>
                 <input type="password" class="form-control" id="password" v-model="password">
             </div>
-            <button @click="add()" type="submit" class="btn btn-primary">Add</button>
+            <button @click="add()" type="button" class="btn btn-primary">Add</button>
         </form>
     </div>
 </template>
@@ -51,11 +51,10 @@
                 }
 
                 this.axios.post("http://localhost/toko-laravel-versi-9/public/api/customers", data)
-                .then(resp => {
+                .then((resp) => {
                     this.$swal('Sukses', 'Berhasil tambah data', 'OK')
                     console.log(resp)
-                    this.get();
-                    // this.$route.params('/member')
+                    this.$router.push('/member')
                 })
             }
         }

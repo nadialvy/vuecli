@@ -23,7 +23,7 @@
             <!-- hidden to secure reason  -->
                 <input type="hidden" class="form-control" id="password" v-model="password">
         
-            <button @click="edit()" type="submit" class="btn btn-primary">Edit</button>
+            <button @click="edit()" type="button" class="btn btn-primary">Edit</button>
         </form> 
     </div>
 </template>
@@ -67,8 +67,9 @@
                 
                 this.axios.put("http://localhost/toko-laravel-versi-9/public/api/customers/"+this.id_customers, data)
                 .then(res => {
+                    this.$swal('Sukses', 'Berhasil edit data', 'OK')
                     console.log(res)
-                    this.$router.push({path: '/member'})
+                    this.$router.push('/member')
                 })
             }
         },

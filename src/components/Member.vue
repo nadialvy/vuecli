@@ -49,14 +49,22 @@
                 })
             },
             hapus(id){
-                if(confirm('Anda yakin?')){
-                    this.axios.delete('http://localhost/toko-laravel-versi-9/public/api/customers/' + id)
-                    .then(() => {
-                        // this.$swal('Sukses', 'Berhasil hapus data', 'OK')
-                        this.get()
-                        location.reload();
-                    })
-                }
+                this.$swal({
+                    title: 'Apakah anda yakin?',
+                    text: "Data yang dihapus tidak dapat dikembalikan!",
+                    icon: 'warning',
+                    buttons: [true , 'Hapus']
+                }).then( value => {
+                    if(value){
+                        this.axios.delete('http://localhost/toko-laravel-versi-9/public/api/customers/' + id)
+                        .then((res) => {
+                            this.$swal('Sukses', 'Berhasil hapus data', 'OK')
+                            this.get()
+                            console.log(res);
+                            
+                        })
+                    }
+                })
                 
             }
         },

@@ -2,6 +2,9 @@ import { createApp } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import App from './App.vue'
 import axios from 'axios'
+import VueSweetalert2 from 'vue-sweetalert2';
+import 'sweetalert2/dist/sweetalert2.min.css';
+
 
 import Home from './components/Home.vue';
 import Profile from './components/Profile.vue';
@@ -26,4 +29,5 @@ const app = createApp(App)
 app.use(router)
 app.config.globalProperties.axios = axios
 app.mount('#app')
+app.use(VueSweetalert2)
 
