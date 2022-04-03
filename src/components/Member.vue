@@ -53,16 +53,20 @@
                     title: 'Apakah anda yakin?',
                     text: "Data yang dihapus tidak dapat dikembalikan!",
                     icon: 'warning',
-                    buttons: [true , 'Hapus']
+                    buttons: true,
+                    dangerMode: true, 
                 }).then( value => {
-                    if(value){
+                    if(value.isConfirmed){
+                        console.log(value.isConfirmed);
+                        
                         this.axios.delete('http://localhost/toko-laravel-versi-9/public/api/customers/' + id)
                         .then((res) => {
                             this.$swal('Sukses', 'Berhasil hapus data', 'OK')
                             this.get()
                             console.log(res);
-                            
                         })
+                    }else {
+                        this.$swal('Batal', 'Data tidak jadi dihapus', 'error')
                     }
                 })
                 
