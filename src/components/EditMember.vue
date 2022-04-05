@@ -21,7 +21,7 @@
                 <input type="text" class="form-control" id="username" v-model="username">
             </div>
             <!-- hidden to secure reason  -->
-                <input type="hidden" class="form-control" id="password" v-model="password">
+            <input type="hidden" class="form-control" id="password" v-model="password">
         
             <button @click="edit()" type="button" class="btn btn-primary">Edit</button>
         </form> 

@@ -1,4 +1,12 @@
 <template>
+    <div>
+        <h2 class="text-center m-3">SM Ent.</h2>
+        <div class="row">
+            <div class="col text-center">
+                <router-link to="/addProduct"><button href="#" class="btn btn-primary"><i class="bi bi-plus-square m-1"></i> Add Product</button></router-link>
+            </div>
+        </div>
+        <hr>
         <div class="m-4 row">
             <div class="d-flex flex-wrap align-items-stretch justify-content-around justify-content-sm-around">
                 <div class="card mr-3 mb-5 shadow bg-white rounded" style="width: 18rem; display: inline-block" v-for="(product, i) in products" :key="i">
@@ -10,12 +18,14 @@
                         <div class="d-flex justify-content-around">
                             <button href="#" class="btn btn-primary"><i class="bi bi-cart"></i></button>
                             <button href="#" class="btn btn-info"><i class="bi bi-pencil"></i></button>
+                            <router-link :to="{path: '/addPhoto/' + product.id_product}"><button class="btn btn-success"><i class="bi bi-image"></i></button></router-link>
                             <button v-on:click="hapus(product.id_product)" class="btn btn-danger"><i class="bi bi-trash"></i></button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 </template>
 
 <script>
