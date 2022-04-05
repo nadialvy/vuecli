@@ -17,7 +17,7 @@
                         <p class="card-text"> {{ product.deskripsi }} </p>
                         <div class="d-flex justify-content-around">
                             <button href="#" class="btn btn-primary"><i class="bi bi-cart"></i></button>
-                            <button href="#" class="btn btn-info"><i class="bi bi-pencil"></i></button>
+                            <router-link :to="{path: '/editProduct/' + product.id_product}"><button class="btn btn-info"><i class="bi bi-pencil"></i></button></router-link>
                             <router-link :to="{path: '/addPhoto/' + product.id_product}"><button class="btn btn-success"><i class="bi bi-image"></i></button></router-link>
                             <button v-on:click="hapus(product.id_product)" class="btn btn-danger"><i class="bi bi-trash"></i></button>
                         </div>

@@ -13,6 +13,7 @@ import EditMember from './components/EditMember.vue';
 import Product from './components/Product.vue';
 import AddProduct from './components/AddProduct.vue';
 import AddPhoto from './components/AddPhoto.vue';
+import EditProduct from './components/EditProduct.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -24,7 +25,8 @@ const router = createRouter({
         {path: '/editMember/:id', name: 'Edit Member', component: EditMember},
         {path : '/product', name: 'Product', component: Product},
         {path: '/addProduct', name: 'Add Product', component: AddProduct},
-        {path: '/addPhoto/:id', name: 'Add Photo', component: AddPhoto}
+        {path: '/addPhoto/:id', name: 'Add Photo', component: AddPhoto},
+        {path: '/editProduct/:id', name: 'Edit Product', component: EditProduct}
     ],
     base: '/'
 })

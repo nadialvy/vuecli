@@ -2,7 +2,7 @@
     <div class="container">
     <h3 class="mt-3">Add Photo</h3>
     <form>
-        <input type="text" class="form-control" id="name" v-model="id_product">
+        <input type="hidden" class="form-control" id="name" v-model="id_product">
         
         <div class="mb-3">
             <label for="name" class="form-label">Add Photo</label>
