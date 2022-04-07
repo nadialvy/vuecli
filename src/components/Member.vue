@@ -1,5 +1,6 @@
 <template>
-    <div class="container border mt-4 rounded">
+    <div class="mt-5 pt-5">
+    <div class="container border mt-2 pt-1 rounded">
         <h3 class="mt-2">Member Data</h3>
         <router-link to="/addMember"> <button class="btn btn-primary mt-3 mb-4">Add Member</button></router-link>
         <table class="table table-hover table-striped">
@@ -21,7 +22,7 @@
                     <td> {{ member.username }} </td>
                     <td> {{ member.telp }} </td>
                     <td>
-                        <router-link :to="{path: '/editMember/' + member.id_customers}"> <button class="btn btn-info" type="button"><i class="fas fa-pencil-alt fa-fw"></i></button> </router-link>
+                        <router-link :to="{path: '/editMember/' + member.id_customers}"> <button class="btn btn-info mr-2" type="button"><i class="fas fa-pencil-alt fa-fw"></i></button> </router-link>
                         <button v-on:click="hapus(member.id_customers)" class="btn btn-danger" ><i class="fas fa-trash-alt fa-fw"></i></button>
                                 
                     </td>
@@ -29,8 +30,8 @@
             </tbody>
         </table>
     </div>
+    </div>
 </template>
-\\\\\\
 <script>
     export default{
         name:'Member',

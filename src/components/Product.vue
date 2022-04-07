@@ -1,15 +1,16 @@
 <template>
-    <div>
-        <h2 class="text-center m-3">SM Ent.</h2>
+    <div class="main pt-2 mt-1">
+        <h2 class="text-center m-3 overflow-hidden mt-5 pt-5">SM Ent.</h2>
         <div class="row">
             <div class="col text-center">
                 <router-link to="/addProduct"><button href="#" class="btn btn-primary"><i class="bi bi-plus-square m-1"></i> Add Product</button></router-link>
             </div>
         </div>
+
         <hr>
-        <div class="m-4 row">
-            <div class="d-flex flex-wrap align-items-stretch justify-content-around justify-content-sm-around">
-                <div class="card mr-3 mb-5 shadow bg-white rounded" style="width: 18rem; display: inline-block" v-for="(product, i) in products" :key="i">
+        <div class="ml-1 row">
+            <div class="d-flex flex-wrap justify-content-sm-around">
+                <div class="card mr-3 mb-5 shadow bg-white rounded" style="width: 18rem;" v-for="(product, i) in products" :key="i">
                     <img :src="'http://localhost:8000/images/' + product.foto_product" class="card-img-top" width="100" height="300" alt="Product">
                     <div class="card-body">
                         <h5 class="card-title"> {{ product.nama_product }} </h5>
@@ -72,3 +73,9 @@
         }
     }
 </script>
+
+<style scoped>
+    .main{
+        overflow-x: hidden;
+    }
+</style>

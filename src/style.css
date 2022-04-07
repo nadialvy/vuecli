@@ -5,7 +5,10 @@
 
 body, html{
 	font-family: 'Poppins';
+    max-width: 100%;
+    overflow-x: hidden;
 }
+
 
 #app{
 	font-family: 'Poppins', sans-serif;
