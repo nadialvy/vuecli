@@ -4,6 +4,7 @@ import App from './App.vue'
 import axios from 'axios'
 import VueSweetalert2 from 'vue-sweetalert2';
 import 'sweetalert2/dist/sweetalert2.min.css';
+// var cors = require('cors')
 
 import Home from './components/Home.vue';
 import Profile from './components/Profile.vue';
@@ -14,6 +15,7 @@ import Product from './components/Product.vue';
 import AddProduct from './components/AddProduct.vue';
 import AddPhoto from './components/AddPhoto.vue';
 import EditProduct from './components/EditProduct.vue';
+import Login from './components/Login.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -26,7 +28,8 @@ const router = createRouter({
         {path : '/product', name: 'Product', component: Product},
         {path: '/addProduct', name: 'Add Product', component: AddProduct},
         {path: '/addPhoto/:id', name: 'Add Photo', component: AddPhoto},
-        {path: '/editProduct/:id', name: 'Edit Product', component: EditProduct}
+        {path: '/editProduct/:id', name: 'Edit Product', component: EditProduct},
+        {path: '/login', name: "Login", component: Login}
     ],
     base: '/'
 })
@@ -36,4 +39,5 @@ app.use(router)
 app.config.globalProperties.axios = axios
 app.mount('#app')
 app.use(VueSweetalert2)
+// app.use(cors())
 
