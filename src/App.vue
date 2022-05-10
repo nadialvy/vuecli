@@ -22,7 +22,16 @@
             <li class="nav-item">
               <router-link class="nav-link" to="/product">Product</router-link>
             </li>
+
+            <li class="nav-item">
+              <router-link class="nav-link" to="/cart">Cart</router-link>
+            </li>
+
+            <li class="nav-item">
+              <!-- <p>Hi, {{user}}</p> -->
+            </li>
           </ul>
+
           <ul class="navbar-nav">
             <li class="nav-item ml-auto">
               <a class="nav-link" v-on:click="logout()"><i class="bi bi-box-arrow-right fa-lg " style=""></i></a>
@@ -44,7 +53,8 @@
     data(){
       return{
         authenticated: localStorage.getItem('status'),
-        data: []
+        data: [],
+        user : localStorage.getItem('user')
       }
     },
     methods:{

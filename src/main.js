@@ -4,7 +4,7 @@ import App from './App.vue'
 import axios from 'axios'
 import VueSweetalert2 from 'vue-sweetalert2';
 import 'sweetalert2/dist/sweetalert2.min.css';
-// var cors = require('cors')
+import store from './store/index';
 
 import Home from './components/Home.vue';
 import Profile from './components/Profile.vue';
@@ -16,6 +16,8 @@ import AddProduct from './components/AddProduct.vue';
 import AddPhoto from './components/AddPhoto.vue';
 import EditProduct from './components/EditProduct.vue';
 import Login from './components/Login.vue';
+import DetailProduct from './components/DetailProduct.vue';
+import Cart from './components/Cart.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -29,15 +31,20 @@ const router = createRouter({
         {path: '/addProduct', name: 'Add Product', component: AddProduct},
         {path: '/addPhoto/:id', name: 'Add Photo', component: AddPhoto},
         {path: '/editProduct/:id', name: 'Edit Product', component: EditProduct},
-        {path: '/login', name: "Login", component: Login}
+        {path: '/login', name: "Login", component: Login},
+        {path: '/detailProduct/:id', name: "Detail Product", component: DetailProduct},
+        {path: '/cart', name: "Cart", component: Cart},
     ],
     base: '/'
 })
+
 
 const app = createApp(App)
 app.use(router)
 app.config.globalProperties.axios = axios
 app.mount('#app')
 app.use(VueSweetalert2)
-// app.use(cors())
+app.use(store)
+
+
 

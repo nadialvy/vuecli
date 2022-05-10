@@ -1,4 +1,5 @@
 <template>
+<div class="mt-5 pt-5">
     <div class="container">
     <h3 class="mt-3">Add Photo</h3>
     <form>
@@ -11,6 +12,7 @@
         <button @click="add()" type="button" class="btn btn-primary">Add</button>
     </form>
     </div>
+</div>
 </template>
 
 <script>

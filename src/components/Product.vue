@@ -17,10 +17,17 @@
                         <h6 class="card-text">Rp.{{ product.harga }} </h6>
                         <p class="card-text"> {{ product.deskripsi }} </p>
                         <div class="d-flex justify-content-around">
-                            <button href="#" class="btn btn-primary"><i class="bi bi-cart"></i></button>
-                            <router-link :to="{path: '/editProduct/' + product.id_product}"><button class="btn btn-info"><i class="bi bi-pencil"></i></button></router-link>
-                            <router-link :to="{path: '/addPhoto/' + product.id_product}"><button class="btn btn-success"><i class="bi bi-image"></i></button></router-link>
-                            <button v-on:click="hapus(product.id_product)" class="btn btn-danger"><i class="bi bi-trash"></i></button>
+                            <router-link :to="{path: '/detailProduct/' + product.id_product}"><button class="btn btn-primary"><i class="bi bi-cart"></i></button></router-link>
+                            <!-- <button class="btn btn-primary"><i class="bi bi-cart"></i></button> -->
+                            <div v-if="type==1">
+                                <router-link :to="{path: '/editProduct/' + product.id_product}"><button class="btn btn-info"><i class="bi bi-pencil"></i></button></router-link>
+                                <router-link :to="{path: '/addPhoto/' + product.id_product}"><button class="btn btn-success"><i class="bi bi-image"></i></button></router-link>
+                            </div>
+                            <div v-else-if="type==2">
+                                <router-link :to="{path: '/editProduct/' + product.id_product}"><button class="btn btn-info"><i class="bi bi-pencil"></i></button></router-link>
+                                <router-link :to="{path: '/addPhoto/' + product.id_product}"><button class="btn btn-success"><i class="bi bi-image"></i></button></router-link>
+                            </div>
+                            <button v-if="type == 2" v-on:click="hapus(product.id_product)" class="btn btn-danger"><i class="bi bi-trash"></i></button>
                         </div>
                     </div>
                 </div>
@@ -35,6 +42,7 @@
         data() {
             return {
                 products: [],
+                type: localStorage.getItem('type')
             }
         },
         methods: {
@@ -64,8 +72,7 @@
                     }else {
                         this.$swal('Batal', 'Data tidak jadi dihapus', 'error')
                     }
-                })
-                
+                })   
             }
         },
         mounted() {

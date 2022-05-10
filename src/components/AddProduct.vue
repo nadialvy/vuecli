@@ -1,4 +1,5 @@
 <template>
+<div class="mt-5 pt-5">
     <div class="container">
         <router-view></router-view>
         <h3 class="mt-3">Add Product</h3>
@@ -17,6 +18,7 @@
             </div>
             <button @click="add()" type="button" class="btn btn-primary">Add</button>
         </form>
+    </div>
     </div>
 </template>
 

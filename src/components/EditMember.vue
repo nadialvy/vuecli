@@ -1,4 +1,5 @@
 <template>
+<div class="mt-5 pt-5">
     <div class="container border mt-4 rounded">
         <h3 class="mt-3">Edit Member</h3>
         <form>
@@ -26,6 +27,7 @@
             <button @click="edit()" type="button" class="btn btn-primary">Edit</button>
         </form> 
     </div>
+</div>
 </template>
 
 <script>
