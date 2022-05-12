@@ -77,6 +77,7 @@
       if(JSON.parse(localStorage.getItem('user'))!=null){
         this.data = JSON.parse(localStorage.getItem('user'));
       }
+        // this.$store.commit('updateCartFromLocalStorage')
     }
   }
 </script>

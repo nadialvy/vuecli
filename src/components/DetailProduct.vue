@@ -12,14 +12,8 @@
                         <p class="card-text">{{desc}}.</p>
                         <h5 class="card-text"> Rp.{{price}} </h5>
                         <p class="card-text" v-if="getCount">On Cart : {{getCount}}</p>
-                        <!-- <form>
-                            <label for="username" class="form-label mt-4">Quantity</label>
-                            
-                                <input type="number" class="form-control" id="username" v-model="qty">
-                         
-                            <button v-on:click="addToCart()" type="button" class="btn btn-primary mt-2">Add to cart</button>
-                        </form>  -->
                         <button v-on:click="addToCart()" type="button" class="btn btn-primary mt-2">Add to cart</button>
+                        <button v-on:click="removeItem()" type="button" class="btn btn-danger mt-2">Remove</button>
                     </div>
                     </div>
                 </div>
@@ -62,15 +56,21 @@ export default {
         addToCart(){
                     //method yg ada di index, parameter
             this.$store.commit('addToCart', this.detail)
-            this.getCount()
+        },
+
+        removeItem(){
+            this.$store.commit('removeItem', this.detail)
         }
     },
     mounted(){
+        this.$store.commit('updateCartFromLocalStorage')
+
         this.getDetail(this.$route.params.id)
     },
     computed: {
         getCount(){
             return this.$store.getters.productQuantity(this.detail)
+            
         }
     }
 }
