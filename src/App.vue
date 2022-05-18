@@ -28,6 +28,10 @@
             </li>
 
             <li class="nav-item">
+              <router-link class="nav-link" to="/history">History</router-link>
+            </li>
+
+            <li class="nav-item">
               <!-- <p>Hi, {{user}}</p> -->
             </li>
           </ul>

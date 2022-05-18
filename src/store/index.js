@@ -4,20 +4,25 @@ function updateLocalStorage(cart){
 
 import  { createStore } from 'vuex'
 
-
 export default createStore({
     state:{
-        cart:[]
+        cart:[],
     },
     getters:{
         productQuantity: state => product => {
             const item = state.cart.find(i => i.id_product === product.id_product)
             if(item){
+                // state.quantity = item.quantity
                 return item.quantity
             }else {
                 return null
             }
-            // updateLocalStorage(state.cart)
+        },
+        cartItems: state => {
+            return state.cart
+        },
+        cartQty: state => {
+            return state.cart
         }
         
     },
@@ -49,6 +54,11 @@ export default createStore({
             if(cart){
                 state.cart = JSON.parse(cart)
             }
+        },
+
+        resetCart(state){
+            state.cart = [],
+            updateLocalStorage(state.cart)
         }
     },
     actions:{

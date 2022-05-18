@@ -18,6 +18,7 @@ import EditProduct from './components/EditProduct.vue';
 import Login from './components/Login.vue';
 import DetailProduct from './components/DetailProduct.vue';
 import Cart from './components/Cart.vue';
+import History from './components/History.vue'
 
 const router = createRouter({
     history: createWebHistory(),
@@ -34,6 +35,7 @@ const router = createRouter({
         {path: '/login', name: "Login", component: Login},
         {path: '/detailProduct/:id', name: "Detail Product", component: DetailProduct},
         {path: '/cart', name: "Cart", component: Cart},
+        {path: '/history', name: "History", component: History},
     ],
     base: '/'
 })

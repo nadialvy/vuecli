@@ -59,6 +59,7 @@
                     localStorage.setItem('user', JSON.stringify(resp.data.user_data[0].name));
                     localStorage.setItem('status', true); //nilainya tetap true ketika sudah login, ketika logout false
                     localStorage.setItem('type', resp.data.user_data[0].type);
+                    localStorage.setItem('id', resp.data.user_data[0].id);
                     this.$emit('authenticated', true);
                     location.href='/';           
                 }).catch(error => {

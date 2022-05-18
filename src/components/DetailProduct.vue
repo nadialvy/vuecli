@@ -12,8 +12,8 @@
                         <p class="card-text">{{desc}}.</p>
                         <h5 class="card-text"> Rp.{{price}} </h5>
                         <p class="card-text" v-if="getCount">On Cart : {{getCount}}</p>
-                        <button v-on:click="addToCart()" type="button" class="btn btn-primary mt-2">Add to cart</button>
-                        <button v-on:click="removeItem()" type="button" class="btn btn-danger mt-2">Remove</button>
+                        <button v-on:click="addToCart()" type="button" class="btn btn-primary mt-2 mr-3">Add to cart</button>
+                        <button v-on:click="removeItem()" type="button" class="btn btn-danger mt-2 mr-3">Remove</button>
                     </div>
                     </div>
                 </div>
